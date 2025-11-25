@@ -1,3 +1,6 @@
+#include <Arduino.h>
+#include <stdint.h>
+
 #define ROW_1 A0
 #define ROW_2 4
 #define ROW_3 5
@@ -24,12 +27,32 @@ byte colPins[8] = { COL_1, COL_2, COL_3, COL_4, COL_5, COL_6, COL_7, COL_8 };
 bool ROW_ACTIVE = LOW;
 bool COL_ACTIVE = HIGH;
 
-uint8_t notePattern[4][4] = {
-  {1, 0, 0, 1},
-  {0, 0, 0, 0},
-  {0, 0, 0, 0},
-  {1, 0, 0, 1}
+#define SONG_ROWS 20   // Número total de filas de la canción
+#define BLOCKS_PER_ROW 4
+
+uint8_t songBuffer[SONG_ROWS][BLOCKS_PER_ROW] = {
+  {1,0,0,1},
+  {0,1,1,0},
+  {0,0,1,0},
+  {1,0,0,1},
+  {1,0,0,1},
+  {0,1,1,0},
+  {0,0,1,0},
+  {1,0,0,1},
+  {1,0,0,1},
+  {0,1,0,0},
+  {1,0,1,0},
+  {1,0,0,1},
+  {1,0,0,1},
+  {0,1,1,0},
+  {0,1,1,0},
+  {1,1,0,1},
+  {1,0,0,1},
+  {0,1,1,0},
+  {0,0,1,0},
+  {1,0,0,1},
 };
+
 
 void setup() {
   // Configurar pines como salida
@@ -44,31 +67,11 @@ void setup() {
 
 void loop() {
 
-  // --- PRUEBA DE FILAS ---
-  /*for (int r = 0; r < 8; r++) {
-    clearMatrix();
-    digitalWrite(rowPins[r], ROW_ACTIVE);  // Enciendo la fila completa
-    for (int c = 0; c < 8; c++) {
-      digitalWrite(colPins[c], COL_ACTIVE);
-    }
-    delay(500);
+scrollBuffer(songBuffer, SONG_ROWS, 80);
+  /*for (int col = 0; col < 8; col++) {
+    drawColumnFromBlockMatrix(notePattern, col);
+    delayMicroseconds(800); // Velocidad del refresco
   }*/
-
-  drawBlockMatrix(notePattern);
-
-  delay(1000);
-
-  // --- PRUEBA DE COLUMNAS ---
-  /*for (int c = 0; c < 8; c++) {
-    clearMatrix();
-    digitalWrite(colPins[c], COL_ACTIVE);  // Enciendo la columna completa
-    for (int r = 0; r < 8; r++) {
-      digitalWrite(rowPins[r], ROW_ACTIVE);
-    }
-    delay(500);
-  }*/
-
-  delay(1000);
 }
 
 
@@ -83,30 +86,49 @@ void clearMatrix() {
     digitalWrite(colPins[c], !COL_ACTIVE);
 }
 
-// Dibuja una nota representada como matriz de 4x4 bloques
-void drawBlockMatrix(uint8_t matrix[4][4]) {
+void scrollBuffer(uint8_t buffer[][BLOCKS_PER_ROW], int numRows, int speedMs) {
+  
+  int maxOffset = numRows * 2; // cada bloque = 2 filas físicas
+  for (int offset = maxOffset; offset > 0; offset--) {
 
-  for (int br = 0; br < 4; br++) {        // block row (0–3)
-    for (int bc = 0; bc < 4; bc++) {      // block column (0–3)
+    unsigned long tStart = millis();
+    
+    while (millis() - tStart < speedMs) {
 
-      bool blockOn = matrix[br][bc];      // 0 = off, 1 = on
+      for (int col = 0; col < 8; col++) {
 
-      // Determina el rango real de LEDs (8x8)
-      int startRow = br * 2;              // 0,2,4,6   → 2 LEDs por bloque
-      int startCol = bc * 2;
-
-      for (int r = 0; r < 2; r++) {       // Cada bloque usa 2x2 LEDs
-        for (int c = 0; c < 2; c++) {
-
-          int realR = startRow + r;
-          int realC = startCol + c;
-
-          // Enciende o apaga el LED
-          digitalWrite(rowPins[realR], blockOn ? ROW_ACTIVE : !ROW_ACTIVE);
-          digitalWrite(colPins[realC], blockOn ? COL_ACTIVE : !COL_ACTIVE);
-        }
+        // Calculamos la fila del buffer correspondiente
+        int shiftedRow;
+        int rowInBuffer;
+        int blockRow;
+        uint8_t value;
+        
+        // Para cada fila física 0-7
+        // calculamos qué fila de bloque mostrar
+        drawColumnFromBuffer(buffer, numRows, col, offset);
       }
-
     }
   }
 }
+void drawColumnFromBuffer(uint8_t buffer[][BLOCKS_PER_ROW], int numRows, int col, int offset) {
+
+  // Apagar todo
+  for (int r = 0; r < 8; r++) digitalWrite(rowPins[r], !ROW_ACTIVE);
+  for (int c = 0; c < 8; c++) digitalWrite(colPins[c], !COL_ACTIVE);
+
+  digitalWrite(colPins[col], COL_ACTIVE);
+
+  int blockCol = col / 2;
+
+  for (int realRow = 0; realRow < 8; realRow++) {
+
+    int bufferRow = (realRow + offset) / 2;
+
+    if (bufferRow >= numRows) continue; // fuera de rango
+
+    if (buffer[bufferRow][blockCol] == 1) {
+      digitalWrite(rowPins[realRow], ROW_ACTIVE);
+    }
+  }
+}
+
