@@ -1,32 +1,16 @@
-# Arduino Piano Tiles
+# PianoTiles – El Castillo Ambulante
 
-This is a repository for an Arduino Project, which consists on making a playable Piano Tiles game using buttons, a buzzer and a dot matrix.
-
-
-## Materials
-
-- Arduino Uno REV-3
-- Dot Matrix 1588bs
-- 4 Buttons
-- A buzzer
-- 16 male-to-male cables for the Matrix, 8 for the Buttons and 2 for the buzzer
-
-## Authors
-
-- [@Dorabyte-Dev](https://github.com/Dorabyte-Dev)
-- [@ecaturla2003](https://github.com/ecaturla2003-coder)
-
-## PianoTiles – El Castillo Ambulante
-
-Objetivo del proyecto
+## Objetivo del proyecto
 
 Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot matrix, botones y un buzzer, donde al bajar una luz en la matriz el usuario debe pulsar el botón correspondiente para reproducir una nota musical. La melodía seleccionada está basada en el leitmotiv de El Castillo Ambulante.
 
 ## Equipo y roles
 
-[Emilio Caturla]	Montaje físico, pruebas en Tinkercad, investigación y definición de notas MIDI, frecuencias y melodía.
+## Authors
 
-[Álvaro Morales]	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
+[@ecaturla2003](https://github.com/ecaturla2003-coder)	Montaje físico, pruebas en Tinkercad, investigación y definición de notas MIDI, frecuencias y melodía.
+
+[@Dorabyte-Dev](https://github.com/Dorabyte-Dev)	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
 
 ## Plan de sprints
 
