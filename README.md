@@ -8,9 +8,9 @@ Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot
 
 ## Authors
 
-[@ecaturla2003](https://github.com/ecaturla2003-coder)	Montaje físico, pruebas en Tinkercad, investigación y definición de notas MIDI, frecuencias y melodía.
+Emilio Caturla([@ecaturla2003](https://github.com/ecaturla2003-coder))	Montaje físico, pruebas en Tinkercad, investigación y definición de notas MIDI, frecuencias y melodía.
 
-[@Dorabyte-Dev](https://github.com/Dorabyte-Dev)	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
+Álvaro Morales([@Dorabyte-Dev](https://github.com/Dorabyte-Dev))	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
 
 ## Plan de sprints
 
