@@ -1,5 +1,5 @@
 # PianoTiles – El Castillo Ambulante
-
+![App Screenshot](https://user-images.githubusercontent.com/38983968/43968170-ed276e7a-9cf8-11e8-9834-be7166884b61.PNG)
 ## Objetivo del proyecto
 
 Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot matrix, botones y un buzzer, donde al bajar una luz en la matriz el usuario debe pulsar el botón correspondiente para reproducir una nota musical. La melodía seleccionada está basada en el leitmotiv de El Castillo Ambulante.
