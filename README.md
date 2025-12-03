@@ -13,6 +13,9 @@ Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot
 
 El proyecto se organizó en dos sprints principales, con objetivos concretos:
 
+## Esquema del circuito
+![1000171009](https://github.com/user-attachments/assets/f21b4670-0139-4b07-a9c7-a2ba6734c68c)
+
 ### Sprint 1 — Montaje e investigación
 
 Investigar los componentes: dot matrix, buzzer, botones.
