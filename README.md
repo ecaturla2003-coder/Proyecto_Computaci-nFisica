@@ -13,7 +13,7 @@ Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot
 
 El proyecto se organizó en dos sprints principales, con objetivos concretos:
 
-[Sprint 1] — Montaje e investigación
+### Sprint 1 — Montaje e investigación
 
 Investigar los componentes: dot matrix, buzzer, botones.
 Intentar simular el proyecto en Fritzing (limitado por falta de ejecución de código).
@@ -21,7 +21,7 @@ Crear prototipo básico en físico.
 Probar combinaciones de sonido con buzzer en Tinkercad.
 Identificar notas MIDI, frecuencias y estructura de la melodía.
 
-[Sprint 2] — Integración y correcciones
+### Sprint 2 — Integración y correcciones
 
 Programar la dot matrix con movimiento descendente de luces.
 Resolver errores de conexión y reconfigurar el esquema.
@@ -31,20 +31,20 @@ Preparar el prototipo final para que luz, sonido y pulsadores se sincronicen.
 
 ## Bitácora de trabajo (por sesiones)
 
-[Sesión 1] — Intento de simulación
+### Sesión 1 — Intento de simulación
 
 Se intenta recrear el proyecto en Fritzing para probar el circuito antes de montarlo.
 Se descubre que Fritzing no permite ejecutar código, por lo que no es útil para testear la dot matrix.
 Tinkercad tampoco ofrece dot matrix, así que no puede simularse completamente.
 Decisión: montar directamente el prototipo físico.
 
-[Sesión 2] — Montaje inicial del prototipo
+### Sesión 2 — Montaje inicial del prototipo
 
 Se monta la dot matrix, el buzzer y los botones en protoboard.
 El prototipo no funciona correctamente: varias columnas de la matriz no se encienden.
 Se revisa el cableado sin éxito; se detecta un comportamiento anómalo en el display.
 
-[Sesión 3] — Identificación del problema y corrección
+### Sesión 3 — Identificación del problema y corrección
 
 Se pide ayuda al profesor para analizar el error.
 Descubrimos que el esquema que estábamos siguiendo correspondía a un modelo de dot matrix diferente, con pines reorganizados.
@@ -52,7 +52,7 @@ Muchas conexiones estaban mal asignadas.
 Se corrige todo el cableado siguiendo el pinout correcto.
 Tras la reparación, la dot matrix funciona de forma estable.
 
-[Sesión 4] — División del trabajo y avance
+### Sesión 4 — División del trabajo y avance
 
 Se divide oficialmente el trabajo:
 Álvaro se encarga de la lógica de programación para que la matriz encienda y desplace luces por columnas simulando “tiles”.
@@ -60,7 +60,7 @@ Emilio monta un prototipo con buzzer e investiga cómo implementar la canción.
 En Tinkercad se prueban frecuencias, notas MIDI y combinaciones de duración.
 Se establecen reglas: 0 = silencio, repetición = aumenta duración, etc.
 
-[Sesión 5] — Integración parcial y melodía
+### Sesión 5 — Integración parcial y melodía
 
 La dot matrix empieza a comportarse correctamente: las luces bajan de forma ordenada.
 Se completan las definiciones de notas MIDI y sus frecuencias para Arduino.
