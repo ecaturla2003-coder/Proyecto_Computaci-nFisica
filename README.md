@@ -47,7 +47,7 @@ Integrar la lógica de botones.
 Completar y ajustar la melodía para reproducirse correctamente.
 Preparar el prototipo final para que luz, sonido y pulsadores se sincronicen.
 
-##Bitácora de trabajo (por sesiones)
+## Bitácora de trabajo (por sesiones)
 
 [Sesión 1] — Intento de simulación
 
