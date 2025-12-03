@@ -68,10 +68,6 @@ void setup() {
 void loop() {
 
 scrollBuffer(songBuffer, SONG_ROWS, 80);
-  /*for (int col = 0; col < 8; col++) {
-    drawColumnFromBlockMatrix(notePattern, col);
-    delayMicroseconds(800); // Velocidad del refresco
-  }*/
 }
 
 
