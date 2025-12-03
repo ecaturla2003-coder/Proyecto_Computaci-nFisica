@@ -16,17 +16,18 @@ This is a repository for an Arduino Project, which consists on making a playable
 - [@Dorabyte-Dev](https://github.com/Dorabyte-Dev)
 - [@ecaturla2003](https://github.com/ecaturla2003-coder)
 
-PianoTiles – El Castillo Ambulante
+## PianoTiles – El Castillo Ambulante
+
 Objetivo del proyecto
 
 Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot matrix, botones y un buzzer, donde al bajar una luz en la matriz el usuario debe pulsar el botón correspondiente para reproducir una nota musical. La melodía seleccionada está basada en el leitmotiv de El Castillo Ambulante.
 
-##Equipo y roles
+## Equipo y roles
 
 [Emilio Caturla]	Montaje físico, pruebas en Tinkercad, investigación y definición de notas MIDI, frecuencias y melodía.
 [Álvaro Morales]	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
 
-##Plan de sprints
+## Plan de sprints
 
 El proyecto se organizó en dos sprints principales, con objetivos concretos:
 
@@ -84,7 +85,7 @@ Se completan las definiciones de notas MIDI y sus frecuencias para Arduino.
 Se prepara la melodía completa del proyecto.
 Se ajustan tonos (arriba/abajo) y duraciones (duplicaciones) para adaptarla al ritmo del juego.
 
-##Problemas encontrados y decisiones tomadas
+## Problemas encontrados y decisiones tomadas
 
 Imposibilidad de simular la dot matrix
 ➜ Se decidió pasar directamente a montaje físico.
@@ -100,14 +101,14 @@ Necesidad de dividir el trabajo
 ➜ Emilio: parte sonora + montaje.
 ➜ Álvaro: lógica de programación y funcionamiento interno del dispositivo.
 
-##Estado actual del proyecto
+## Estado actual del proyecto
 
 Dot matrix funcionando correctamente con iluminación descendente.
 Notas MIDI, frecuencias y melodía casi definidas.
 Buzzer probando sonidos de manera estable.
 Prototipo físico montado y en funcionamiento parcial.
 
-##Tareas pendientes
+## Tareas pendientes
 
 Terminar la implementación completa de la canción en el buzzer.
 
