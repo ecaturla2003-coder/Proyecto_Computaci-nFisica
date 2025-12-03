@@ -25,6 +25,7 @@ Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot
 ## Equipo y roles
 
 [Emilio Caturla]	Montaje físico, pruebas en Tinkercad, investigación y definición de notas MIDI, frecuencias y melodía.
+
 [Álvaro Morales]	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
 
 ## Plan de sprints
