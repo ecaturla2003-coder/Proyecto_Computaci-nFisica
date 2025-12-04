@@ -10,6 +10,9 @@ Desarrollar un prototipo que simule un juego tipo Piano Tiles utilizando una dot
 - Álvaro Morales([@Dorabyte-Dev](https://github.com/Dorabyte-Dev))	Desarrollo del código, lógica de iluminación y detección de botones, investigación de componentes electrónicos y funcionamiento del sistema.
 
 ## Esquema del circuito
+<img width="935" height="601" alt="Captura de pantalla 2025-12-04 094556" src="https://github.com/user-attachments/assets/3f746968-2265-4aec-9ec3-d5abdc9fc6b7" />
+
+## Montaje físico del circuito
 ![1000171009](https://github.com/user-attachments/assets/f21b4670-0139-4b07-a9c7-a2ba6734c68c)
 
 ## Plan de sprints
