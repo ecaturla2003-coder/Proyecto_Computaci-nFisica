@@ -18,6 +18,7 @@
 #define COL_6 9
 #define COL_7 A1
 #define COL_8 10// Pines que controlan las 8 filas
+#define BUTTON_PIN A4
 
 byte rowPins[8] = { ROW_1, ROW_2, ROW_3, ROW_4, ROW_5, ROW_6, ROW_7, ROW_8 };
 byte colPins[8] = { COL_1, COL_2, COL_3, COL_4, COL_5, COL_6, COL_7, COL_8 };
@@ -60,18 +61,35 @@ void setup() {
     pinMode(rowPins[i], OUTPUT);
     pinMode(colPins[i], OUTPUT);
   }
+  pinMode(BUTTON_PIN, INPUT);
 
   // Apagar todo inicialmente
   clearMatrix();
+  Serial.begin(9600);
+  
 }
 
 void loop() {
+  scrollBuffer(songBuffer, SONG_ROWS, 80);
+  
+  int v = analogRead(BUTTON_PIN);
 
-scrollBuffer(songBuffer, SONG_ROWS, 80);
-  /*for (int col = 0; col < 8; col++) {
-    drawColumnFromBlockMatrix(notePattern, col);
-    delayMicroseconds(800); // Velocidad del refresco
-  }*/
+  // (Ajusta los umbrales si lo necesitas)
+  if(v < 1){
+    Serial.println("No buttons");
+  }
+  else if (v < 600) {
+    Serial.println("Botón 1 (220Ω)");
+  }
+  else if (v < 900) {
+    Serial.println("Botón 2 (330Ω)");
+  }
+  else if (v < 1000) {
+    Serial.println("Botón 3 (2kΩ)");
+  }
+  else if (v < 1200) {
+    Serial.println("Botón 4 (10kΩ)");
+  }
 }
 
 
